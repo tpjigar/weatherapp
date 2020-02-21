@@ -54,6 +54,7 @@
         mounted() {
           this.fetchData()
 
+          //algolia search
           var placesAutocomplete = places({
             appId: 'plV2S30EXOO0',
             apiKey: 'e93642ea4af7145aef67968ae223a29a',
@@ -63,20 +64,28 @@
             aroundLatLngViaIP: false,
           });
 
-
           var $address = document.querySelector('#address-value')
-          placesAutocomplete.on('change', function(e) {
-            console.log(e.suggestion);
+          placesAutocomplete.on('change', (e) => {
             $address.textContent = e.suggestion.value
-          });
 
+            this.location.name = `${e.suggestion.name}, ${e.suggestion.country}`
+            this.location.lat = e.suggestion.latlng.lat
+            this.location.lng = e.suggestion.latlng.lng
+          });
           placesAutocomplete.on('clear', function() {
             $address.textContent = 'none';
           });
 
-
-
         },
+      watch: {
+          location: {
+            handler(newValue, oldValue) {
+              this.fetchData()
+            },
+            deep: true
+          }
+
+      },
       data() {
         return {
           currentTemperature: {
@@ -87,9 +96,9 @@
           },
           daily: [],
           location: {
-            name: 'Toronto, Canada',
-            lat: '43.6532',
-            lng: '-79.383223'
+            name: 'Surat, India',
+            lat: '21.1865',
+            lng: '72.8081'
           }
         }
       },

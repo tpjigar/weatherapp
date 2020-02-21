@@ -8,7 +8,7 @@
 <input type="search" id="address" class="form-control" placeholder="Where are we going?" />
 
 <p>Selected: <strong id="address-value">none</strong></p>
-<script src="https://cdn.jsdelivr.net/npm/places.js@1.18.1" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/places.js@1.18.1"></script>
 <script>
     (function() {
         var placesAutocomplete = places({
@@ -22,7 +22,6 @@
 
         var $address = document.querySelector('#address-value')
         placesAutocomplete.on('change', function(e) {
-            console.log(e.suggestion);
             $address.textContent = e.suggestion.value
         });
 
