@@ -6,6 +6,10 @@
     <title>Document</title>
     <link rel="stylesheet" href="/css/main.css">
 
+    {{-- Algolia css for map only    --}}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/leaflet/1/leaflet.css" />
+    <script src="https://cdn.jsdelivr.net/leaflet/1/leaflet.js"></script>
+
     {{-- Algolia script --}}
     <script src="https://cdn.jsdelivr.net/npm/places.js@1.18.1" defer></script>
 
