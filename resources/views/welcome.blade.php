@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=devioce-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Weather App with Laravel, Vuejs, Algolia, Darksky API </title>
     <link rel="stylesheet" href="/css/main.css">
 
     {{-- Algolia css for map only    --}}
